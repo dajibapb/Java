@@ -36,13 +36,10 @@
  */
 package com.thealgorithms.maths;
 
-import java.util.*;
-
 class DigitalRoot {
 
     public static int digitalRoot(int n) {
-        if (single(n) <= 9) // If n is already single digit than simply call single method and return the value
-        {
+        if (single(n) <= 9) { // If n is already single digit than simply call single method and return the value
             return single(n);
         } else {
             return digitalRoot(single(n));
@@ -51,23 +48,15 @@ class DigitalRoot {
 
     // This function is used for finding the sum of digits of number
     public static int single(int n) {
-        if (n <= 9) // if n becomes less than 10 than return n
-        {
+        if (n <= 9) { // if n becomes less than 10 than return n
             return n;
         } else {
-            return (n % 10) + single(n / 10);                     // n % 10 for extracting digits one by one
+            return (n % 10) + single(n / 10); // n % 10 for extracting digits one by one
         }
-    }                                                             // n / 10 is the number obtainded after removing the digit one by one  
+    } // n / 10 is the number obtainded after removing the digit one by one
     // Sum of digits is stored in the Stack memory and then finally returned
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number : ");
-        int n = sc.nextInt();                                     // Taking a number as input from the user
-        System.out.println("Digital Root : " + digitalRoot(n));     // Printing the value returned by digitalRoot() method
-    }
 }
-
 /**
  * Time Complexity : O((Number of Digits)^2) Auxiliary Space Complexity :
  * O(Number of Digits) Constraints : 1 <= n <= 10^7

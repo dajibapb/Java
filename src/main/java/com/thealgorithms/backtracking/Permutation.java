@@ -1,6 +1,5 @@
 package com.thealgorithms.backtracking;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,6 +8,7 @@ import java.util.List;
  * @author Alan Piao (https://github.com/cpiao3)
  */
 public class Permutation {
+
     /**
      * Find all permutations of given array using backtracking
      * @param arr the array.
@@ -21,6 +21,7 @@ public class Permutation {
         backtracking(array, 0, result);
         return result;
     }
+
     /**
      * Backtrack all possible orders of a given array
      * @param arr the array.
@@ -38,6 +39,7 @@ public class Permutation {
             swap(index, i, arr);
         }
     }
+
     /**
      * Swap two element for a given array
      * @param a first index
